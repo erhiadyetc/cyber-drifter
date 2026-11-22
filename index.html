@@ -3305,5 +3305,14 @@
             window.addEventListener('load', finishBoot, { once: true });
         })();
     </script>
+    <script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./sw.js")
+      .then(() => console.log("Service Worker ativado!"))
+      .catch((error) => console.error("Erro:", error));
+  });
+}
+</script>
 </body>
 </html>
